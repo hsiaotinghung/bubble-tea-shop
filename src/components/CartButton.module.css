@@ -1,0 +1,35 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  background-color: var(--mystic);
+  color: white;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 25px;
+  font-weight: bold;
+  border: 2px solid var(--mystic);
+}
+
+.button:hover,
+.button:active {
+  border: 2px solid var(--mystic-dark);
+}
+
+.icon {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+
+.badge {
+  position: relative;
+  top: -12px;
+  left: -22px;
+  background-color: var(--dark-salmon);
+  padding: 0.25rem 1rem;
+  border-radius: 25px;
+  margin-left: 1rem;
+  font-weight: bold;
+}
