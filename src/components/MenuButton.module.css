@@ -1,0 +1,12 @@
+.button {
+  cursor: pointer;
+  font: inherit;
+  border: none;
+  color: white;
+  background-color: var(--mystic);
+}
+
+.icon {
+  width: 2.35rem;
+  height: 2.35rem;
+}

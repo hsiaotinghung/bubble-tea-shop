@@ -4,6 +4,7 @@
   --misty-rose: hsla(12, 53%, 87%, 1);
   --camel: hsla(30, 40%, 63%, 1);
   --mystic: hsla(341, 61%, 59%, 1);
+  --mystic-dark: hsla(341, 41%, 29%, 1);
   --dark-salmon: hsla(11, 76%, 72%, 1);
 }
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
@@ -18,5 +19,5 @@ html {
 
 body {
   margin: 0;
-  background-color: var(--outer-space-crayola);
+  background-color: var(--ash-gray);
 }

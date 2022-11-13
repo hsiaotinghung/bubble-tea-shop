@@ -1,0 +1,23 @@
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-right: 1.5rem;
+}
+
+.nav a {
+  padding: 0 3px;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+}
+
+.nav a:hover,
+.nav a:active,
+.nav a.active {
+  border-bottom: 2px solid white;
+}
