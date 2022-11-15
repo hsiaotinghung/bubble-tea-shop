@@ -6,6 +6,7 @@
   --mystic: hsla(341, 61%, 59%, 1);
   --mystic-dark: hsla(341, 41%, 29%, 1);
   --dark-salmon: hsla(11, 76%, 72%, 1);
+  --dark-salmon-lite: hsla(11, 76%, 72%, 0.9);
 }
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
