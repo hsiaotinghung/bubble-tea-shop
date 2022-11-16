@@ -4,16 +4,16 @@ import classes from "./OrderMenuItem.module.css";
 import OrderMenuItemForm from "./OrderMenuItemForm";
 import CartContext from "../context/cartContext";
 
-const MenuItem = (props) => {
+const MenuItem = ({ item }) => {
   const cartContext = useContext(CartContext);
 
-  const price = `$${props.price.toFixed(2)}`;
+  const price = `$${item.price.toFixed(2)}`;
   const addToCartHandler = (amount) => {
     cartContext.addItem({
-      id: props.id,
-      name: props.name,
+      id: item.id,
+      name: item.name,
       amount,
-      price: props.price,
+      price: item.price,
     });
   };
 
@@ -23,12 +23,12 @@ const MenuItem = (props) => {
         <img src={""} alt="A cup of tea"></img>
       </div>
       <div>
-        <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
+        <h3>{item.name}</h3>
+        <div className={classes.description}>{item.description}</div>
         <div className={classes.price}>{price}</div>
       </div>
       <div className={classes.form}>
-        <OrderMenuItemForm id={props.id} onAddToCart={addToCartHandler} />
+        <OrderMenuItemForm id={item.id} onAddToCart={addToCartHandler} />
       </div>
     </li>
   );
