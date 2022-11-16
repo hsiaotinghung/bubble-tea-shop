@@ -32,12 +32,7 @@ const DUMMY_MENU = [
 
 const OrderMenu = () => {
   const menuList = DUMMY_MENU.map((item) => (
-    <OrderMenuItem
-      key={item.id}
-      name={item.name}
-      description={item.description}
-      price={item.price}
-    />
+    <OrderMenuItem key={item.id} item={item} />
   ));
 
   return (
