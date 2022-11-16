@@ -1,9 +1,22 @@
+import { useContext } from "react";
+
 import classes from "./OrderMenuItem.module.css";
 import OrderMenuItemForm from "./OrderMenuItemForm";
+import CartContext from "../context/cartContext";
 
 const MenuItem = (props) => {
+  const cartContext = useContext(CartContext);
+
   const price = `$${props.price.toFixed(2)}`;
-  const addToCartHandler = (amount) => {};
+  const addToCartHandler = (amount) => {
+    cartContext.addItem({
+      id: props.id,
+      name: props.name,
+      amount,
+      price: props.price,
+    });
+  };
+
   return (
     <li className={classes.item}>
       <div className={classes.image}>
