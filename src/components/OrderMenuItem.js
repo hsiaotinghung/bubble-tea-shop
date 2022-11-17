@@ -20,7 +20,7 @@ const MenuItem = ({ item }) => {
   return (
     <li className={classes.item}>
       <div className={classes.image}>
-        <img src={""} alt="A cup of tea"></img>
+        <img src={`../assets/${item.id}.JPG`} alt="A cup of tea"></img>
       </div>
       <div>
         <h3>{item.name}</h3>

@@ -1,37 +1,26 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../firebase";
+
 import Card from "./Card";
 import OrderMenuItem from "./OrderMenuItem";
 import classes from "./OrderMenu.module.css";
 
-const DUMMY_MENU = [
-  {
-    id: "m1",
-    name: "Green tea",
-    description: "Mauris lacinia mauris vitae quam aliquet",
-    price: 3.5,
-  },
-  {
-    id: "m2",
-    name: "Black tea",
-    description: "Condimentum lorem",
-    price: 3.5,
-  },
-  {
-    id: "m3",
-    name: "Oolong tea",
-    description: "Nulla quis varius risus",
-    price: 3.5,
-  },
-  {
-    id: "m4",
-    name: "Brown sugar latte",
-    description:
-      "Interdum et malesuada fames ac ante ipsum primis in faucibus.",
-    price: 5,
-  },
-];
-
 const OrderMenu = () => {
-  const menuList = DUMMY_MENU.map((item) => (
+  const [menu, setMenu] = useState(() => []);
+  useEffect(() => {
+    async function getDoc() {
+      const querySnapshot = await getDocs(collection(db, "menu"));
+      const menuItems = [];
+      querySnapshot.forEach((doc) => {
+        menuItems.push(doc.data());
+      });
+      setMenu(menuItems);
+    }
+    getDoc();
+  }, []);
+
+  const menuList = menu.map((item) => (
     <OrderMenuItem key={item.id} item={item} />
   ));
 
