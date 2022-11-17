@@ -1,9 +1,11 @@
 import { useContext } from "react";
+import { collection, addDoc } from "firebase/firestore";
 
 import CartItem from "../components/CartItem";
 import classes from "./Cart.module.css";
 import CartContext from "../context/cartContext";
 import ModalContext from "../context/modalContext";
+import { db } from "../firebase";
 
 const Cart = (props) => {
   const cartContext = useContext(CartContext);
@@ -35,6 +37,14 @@ const Cart = (props) => {
     </ul>
   );
 
+  const submitOrder = async () => {
+    const docRef = await addDoc(collection(db, "orders"), {
+      items: cartContext.items,
+      totalAmount: cartContext.totalAmount,
+      orderType: "online",
+    });
+  };
+
   return (
     <>
       {cartItems}
@@ -46,7 +56,11 @@ const Cart = (props) => {
         <button className={classes["button--alt"]} onClick={hide}>
           Close
         </button>
-        {hasItems && <button className={classes.button}>Order</button>}
+        {hasItems && (
+          <button className={classes.button} onClick={submitOrder}>
+            Order
+          </button>
+        )}
       </div>
     </>
   );
