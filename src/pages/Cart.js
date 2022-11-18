@@ -60,9 +60,11 @@ const Cart = (props) => {
         <span>{totalAmount}</span>
       </div>
       <div className={classes.actions}>
-        <button className={classes["button--alt"]} onClick={hide}>
-          Close
-        </button>
+        {!props.isInStore && (
+          <button className={classes["button--alt"]} onClick={hide}>
+            Close
+          </button>
+        )}
         {hasItems && (
           <button className={classes.button} onClick={submitOrder}>
             Order
