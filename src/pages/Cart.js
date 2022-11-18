@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { collection, addDoc } from "firebase/firestore";
+import { useNavigate } from "react-router-dom";
 
 import CartItem from "../components/CartItem";
 import classes from "./Cart.module.css";
@@ -36,13 +37,19 @@ const Cart = (props) => {
       ))}
     </ul>
   );
-
+  const navigate = useNavigate();
   const submitOrder = async () => {
     const docRef = await addDoc(collection(db, "orders"), {
       items: cartContext.items,
       totalAmount: cartContext.totalAmount,
       orderType: "online",
     });
+
+    if (docRef.id) {
+      hide();
+      cartContext.clearCart();
+      navigate(`/order-confirmation/${docRef.id}`);
+    }
   };
 
   return (

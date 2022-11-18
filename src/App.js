@@ -8,6 +8,7 @@ import Layout from "./layouts/Layout";
 import Modal from "./components/Modal";
 import CartProvider from "./context/CartProvider";
 import ModalProvider from "./context/ModalProvider";
+import OrderConfirmation from "./pages/OrderConfirmation";
 
 function App() {
   return (
@@ -18,6 +19,10 @@ function App() {
             <Route path="/" element={<Navigate replace to="/order" />} />
             <Route path="/order" element={<Order />} />
             <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/order-confirmation/:orderId"
+              element={<OrderConfirmation />}
+            />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
