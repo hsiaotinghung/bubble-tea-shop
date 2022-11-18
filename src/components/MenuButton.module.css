@@ -6,7 +6,7 @@
   background-color: var(--mystic);
 }
 
-.icon {
-  width: 2.35rem;
-  height: 2.35rem;
+.icon svg {
+  width: 2rem;
+  height: 2rem;
 }
