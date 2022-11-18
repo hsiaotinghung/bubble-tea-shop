@@ -4,7 +4,7 @@ import classes from "./OrderMenuItem.module.css";
 import OrderMenuItemForm from "./OrderMenuItemForm";
 import CartContext from "../context/cartContext";
 
-const MenuItem = ({ item }) => {
+const MenuItem = ({ item, isInStore }) => {
   const cartContext = useContext(CartContext);
 
   const price = `$${item.price.toFixed(2)}`;
@@ -18,7 +18,7 @@ const MenuItem = ({ item }) => {
   };
 
   return (
-    <li className={classes.item}>
+    <li className={`${classes.item} ${isInStore ? classes["in-store"] : ""}`}>
       <div className={classes.image}>
         <img src={`../assets/${item.id}.JPG`} alt="A cup of tea"></img>
       </div>

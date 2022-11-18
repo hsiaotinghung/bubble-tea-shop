@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 import Card from "../components/Card";
 import classes from "./OrderConfirmation.module.css";
+import Layout from "../layouts/Layout";
 
 const OrderItem = ({ item }) => {
   const price = `$${item.price.toFixed(2)}`;
@@ -55,21 +56,23 @@ const OrderConfirmation = (props) => {
   }
 
   return (
-    <section className={classes["order-confirmation"]}>
-      <h1>Order Confirmation</h1>
+    <Layout>
+      <section className={classes["order-confirmation"]}>
+        <h1>Order Confirmation</h1>
 
-      <Card>
-        <h2>
-          Order Number:{" "}
-          <span className={classes["order-number"]}>{order.id}</span>
-        </h2>
-        {orderItems}
-        <div className={classes.total}>
-          <span>Total Amount</span>
-          <span>{totalAmount}</span>
-        </div>
-      </Card>
-    </section>
+        <Card>
+          <h2>
+            Order Number:{" "}
+            <span className={classes["order-number"]}>{order.id}</span>
+          </h2>
+          {orderItems}
+          <div className={classes.total}>
+            <span>Total Amount</span>
+            <span>{totalAmount}</span>
+          </div>
+        </Card>
+      </section>
+    </Layout>
   );
 };
 

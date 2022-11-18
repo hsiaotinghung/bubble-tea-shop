@@ -22,3 +22,13 @@
     transform: translateY(0);
   }
 }
+
+.in-store {
+  max-width: 90%;
+  margin-left: 1rem;
+}
+
+.in-store.menu ul {
+  display: flex;
+  flex-flow: wrap;
+}

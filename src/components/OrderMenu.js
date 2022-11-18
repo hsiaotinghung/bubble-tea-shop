@@ -6,7 +6,7 @@ import Card from "./Card";
 import OrderMenuItem from "./OrderMenuItem";
 import classes from "./OrderMenu.module.css";
 
-const OrderMenu = () => {
+const OrderMenu = (props) => {
   const [menu, setMenu] = useState(() => []);
   useEffect(() => {
     async function getDoc() {
@@ -21,11 +21,15 @@ const OrderMenu = () => {
   }, []);
 
   const menuList = menu.map((item) => (
-    <OrderMenuItem key={item.id} item={item} />
+    <OrderMenuItem key={item.id} item={item} isInStore={props.isInStore} />
   ));
 
   return (
-    <section className={classes.menu}>
+    <section
+      className={`${classes.menu} ${
+        props.isInStore ? classes["in-store"] : ""
+      }`}
+    >
       <Card>
         <ul>{menuList}</ul>
       </Card>
