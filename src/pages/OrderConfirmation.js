@@ -15,7 +15,7 @@ const OrderItem = ({ item }) => {
         <img src={`../assets/${item.id}.JPG`} alt="A cup of tea"></img>
       </div>
       <div>
-        <h2>{item.name}</h2>
+        <h3>{item.name}</h3>
         <div className={classes.summary}>
           <span className={classes.price}>{price}</span>
         </div>
@@ -56,11 +56,13 @@ const OrderConfirmation = (props) => {
 
   return (
     <section className={classes["order-confirmation"]}>
-      <h2>
-        Order Number:{" "}
-        <span className={classes["order-number"]}>{order.id}</span>
-      </h2>
+      <h1>Order Confirmation</h1>
+
       <Card>
+        <h2>
+          Order Number:{" "}
+          <span className={classes["order-number"]}>{order.id}</span>
+        </h2>
         {orderItems}
         <div className={classes.total}>
           <span>Total Amount</span>
