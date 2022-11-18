@@ -20,7 +20,7 @@ const Header = (props) => {
         </div>
       </header>
       <div className={classes["main-image"]}>
-        <img src={""} alt="A table full of delicious food!" />
+        <img src={"../assets/banner.JPG"} alt="Smiley bubble tea" />
       </div>
     </>
   );
