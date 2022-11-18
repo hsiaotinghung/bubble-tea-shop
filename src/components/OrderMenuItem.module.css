@@ -1,10 +1,17 @@
 .item {
   display: flex;
+  flex-flow: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   margin: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+}
+@media (min-width: 480px) {
+  .item {
+    flex-flow: row;
+    align-items: center;
+  }
 }
 
 .item h3 {
