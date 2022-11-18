@@ -38,7 +38,7 @@
   margin: 0.25rem;
   width: 2rem;
   height: 2rem;
-  border-radius: 50%;
+  border-radius: 5px;
   font-weight: bold;
   font-size: 1.25rem;
   color: var(--mystic-dark);
