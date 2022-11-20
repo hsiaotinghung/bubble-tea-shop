@@ -9,6 +9,7 @@ import CartProvider from "./context/CartProvider";
 import ModalProvider from "./context/ModalProvider";
 import OrderConfirmation from "./pages/OrderConfirmation";
 import OrderInStore from "./pages/OrderInStore";
+import ViewOrders from "./pages/ViewOrders";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/order-in-store" element={<OrderInStore />} />
+          <Route path="/view-orders" element={<ViewOrders />} />
 
           <Route path="*" element={<NotFound />} />
         </Routes>

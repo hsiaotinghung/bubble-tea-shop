@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 
 import CartItem from "../components/CartItem";
@@ -40,9 +40,10 @@ const Cart = (props) => {
   const navigate = useNavigate();
   const submitOrder = async () => {
     const docRef = await addDoc(collection(db, "orders"), {
+      createdAt: serverTimestamp(),
       items: cartContext.items,
       totalAmount: cartContext.totalAmount,
-      orderType: "online",
+      orderType: props.isInStore ? "In Store" : "online",
     });
 
     if (docRef.id) {
