@@ -3,6 +3,7 @@ import { PieChart } from "react-minimal-pie-chart";
 const OrderPieChart = ({ pieChartData }) => {
   return (
     <PieChart
+      style={{ maxHeight: "20rem" }}
       data={pieChartData}
       label={({ dataEntry }) => `${dataEntry.title}: ${dataEntry.value}`}
       labelStyle={(index) => ({

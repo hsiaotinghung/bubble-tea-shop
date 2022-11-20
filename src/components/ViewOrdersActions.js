@@ -43,7 +43,7 @@ const ViewOrdersActions = ({ handleButtonClick }) => {
         <button
           className={classes.button}
           key={option.label}
-          onClick={() => handleButtonClick(option.dayCompareFunction)}
+          onClick={() => handleButtonClick(option)}
         >
           {option.label}
         </button>

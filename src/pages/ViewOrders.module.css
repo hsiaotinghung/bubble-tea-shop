@@ -1,5 +1,7 @@
 .main {
   padding: 0 3rem 3rem 3rem;
+  margin: auto;
+  width: 80%;
 }
 
 .main h3 {
@@ -31,29 +33,4 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-}
-
-.list-item {
-  margin: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid var(--outer-space-crayola);
-}
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-.table th {
-  text-align: left;
-  height: 3rem;
-  color: var(--mystic-dark);
-}
-
-.table td {
-  height: 3rem;
-}
-
-.table tr {
-  border-bottom: 1px solid #ccc;
 }

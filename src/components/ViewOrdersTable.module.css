@@ -1,0 +1,35 @@
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.table th {
+  text-align: left;
+  height: 3rem;
+  color: var(--mystic-dark);
+}
+
+.table td {
+  height: 3rem;
+}
+
+.table tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.button {
+  font: inherit;
+  cursor: pointer;
+  background-color: var(--mystic-dark);
+  border: 1px solid var(--mystic-dark);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.button:hover,
+.button:active {
+  background-color: #641e03;
+  border-color: #641e03;
+}
