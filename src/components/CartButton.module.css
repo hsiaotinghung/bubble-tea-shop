@@ -34,6 +34,13 @@
   font-weight: bold;
 }
 
+.total {
+  position: relative;
+  top: 10px;
+  left: -18px;
+  font-size: 0.75rem;
+}
+
 .bump {
   animation: bump 300ms ease-out;
 }

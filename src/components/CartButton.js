@@ -9,7 +9,7 @@ const CartButton = (props) => {
   const cartContext = useContext(CartContext);
   const { show } = useContext(ModalContext);
 
-  const { items } = cartContext;
+  const { items, totalAmount } = cartContext;
 
   const numberOfCartItems = items.reduce((curNumber, item) => {
     return curNumber + item.amount;
@@ -39,6 +39,9 @@ const CartButton = (props) => {
         <CartIcon />
       </span>
       <span className={classes.badge}>{numberOfCartItems}</span>
+      {totalAmount !== 0 && (
+        <span className={classes.total}>${totalAmount.toFixed(2)}</span>
+      )}
     </button>
   );
 };
